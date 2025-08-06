@@ -4,6 +4,11 @@ Welcome to the **APT Threat Hunting Playbooks** repository — a curated collect
 
 ---
 
+**Threat hunting** is proactive. It starts with a hypothesis — not an alert. You assume an adversary may already be inside the network and systematically test that assumption using logs, telemetry, and known TTPs. There is no signature. There is no SIEM correlation rule. Just visibility, logic, and adversary understanding.
+
+**SOC alerts** are reactive. They rely on predefined detection rules firing when known bad behavior is observed. Alerts tell you something already happened — threat hunting is about finding what hasn’t been caught yet.
+
+
 ## 🎯 Purpose
 
 This repository provides **assumption-based threat hunt chains** focused on real-world adversaries such as **APT29, APT41, APT10, FIN6, and APT27**. Each hunt breaks down known TTPs into **actionable steps** using:
@@ -26,26 +31,3 @@ Each hunt follows this structure:
 - **🔍 Hunt Chain** — Step-by-step investigation flow using logs
 - **💡 Thought Process** — Why the step matters, what to ask yourself
 - **🧠 Summary** — What you’ve accomplished and what to do next
-
-These are **not alert-centric** — they're designed to help you hunt with **no EDR trigger**, just logs and threat intel.
-
----
-
-## ⚙️ How to Use
-
-1. Pick a playbook based on threat actor or technique.
-2. Review the hypothesis and steps.
-3. Query your SIEM/EDR using Sysmon/Event IDs provided.
-4. Adjust logic to match your log schema or visibility.
-5. Document findings and escalate as needed.
-
----
-
-## 📌 Requirements
-
-These playbooks assume access to:
-
-- Windows Event Logs
-- Sysmon logs (especially IDs: 1, 3, 10, 11, 13)
-- Network logs (Zeek, Suricata, Proxy)
-- Authentication telemetry (4624, 4648, 4672, etc.)
